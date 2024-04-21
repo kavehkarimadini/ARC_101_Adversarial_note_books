@@ -45,6 +45,8 @@ ________________________________________________________________________________
     - During training, the network adjusts the weights to maximize the likelihood of the training data.
 - Use Cases:
     - Despite being historically important, RBMs have been surpassed by more up-to-date models like generative adversarial networks (GANs) and variational autoencoders (VAEs)¹.
+- Note Books:
+    - ARC_101_RBM_MNIST_Digits.ipynb
 
 ## Deep Boltzmann Machine (DBM)
 - Overview:
