@@ -85,20 +85,30 @@ ________________________________________________________________________________
     - DBNs and DBMs share similarities but differ in their architecture:
         - DBNs have no bidirectional connections between layers, while DBMs allow bidirectional connections in the bottom layers.
         - DBNs are more commonly used due to their simpler structure and effectiveness in various applications.
+___________________________________________________________________
 
-## Deep Boltzmann Machine (DBM)
-- Overview:
-    - A DBM is a three-layer generative model.
-    - It is similar to a DBN but allows bidirectional connections in the bottom layers.
-    - DBMs extend the concept of RBMs (Restricted Boltzmann Machines) to deeper architectures.
-- Energy Function:
-    - The energy function of a DBM is an extension of the energy function of the RBM.
-    - For a DBM with N hidden layers, the energy function is defined as follows:
-      $$E(v, h) = -\sum_i v_i b_i - \sum_{n=1}^N \sum_k h_{n,k} b_{n,k} - \sum_{i, k} v_i w_{ik} h_k - \sum_{n=1}^{N-1} \sum_{k,l} h_{n,k} w_{n, k, l} h_{n+1, l}$$
-    - Here, v represents visible units, h represents hidden units, and the weights (w) and biases (b) play crucial roles.
+## Markov chains
+
+- Definition & Structure:
+   - A Markov chain is a mathematical model that represents a sequence of states, where the transition from one state to another depends only on the current state (not the entire history).
+   - Each state has associated probabilities for transitioning to other states.
+   - The "memorylessness" property of Markov chains makes them useful for modeling processes with short-term dependencies.
+
+- Training:
+   - In generative AI, Markov chains are employed to generate sequences of data, such as text, music, or images.
+   - Specifically, they model the probability of transitioning from one state (e.g., a word, a musical note, or a pixel) to another.
+   - By sampling from the Markov chain, we can create new sequences that resemble the original data distribution.
+
 - Applications:
-    - DBMs are part of the family of generative models and can discover intricate structures within large datasets.
-    - They learn to recreate input data and have influenced the design of more advanced models like deep belief networks.
+   - **Text Generation**: Markov chains can generate realistic sentences by transitioning between words based on their probabilities in a given text corpus.
+   - **Music Composition**: Musical notes can be modeled as states, and Markov chains can generate new melodies.
+   - **Image Synthesis**: In image generation, each pixel or patch can be a state, and transitions determine the next pixel's color or texture.
 
-In summary, DBNs are simpler and historically significant, while DBMs extend the concept to deeper architectures, allowing bidirectional connections. Both models contribute to the fascinating world of neural networks.
+- Limitations:
+   - Markov chains assume that the future state depends only on the current state, which may not hold for complex data.
+   - Long-term dependencies are challenging to capture using basic Markov models.
+- Note Book:
+   - ARC_101_Markov_Chain_Simulation.ipynb
+
+In summary, Markov chains provide a foundation for generative algorithms by allowing us to create new data sequences based on learned transition probabilities. They're a powerful tool for modeling sequential data!
 ________________________________________________________________________________
